@@ -1,10 +1,12 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const { getData, insertOne, deleteOne, deleteMany, insertMany, updateOne, updateMany } = require('./src/lib/mongodb')
+const cors = require('cors')
 
 const app = express()
 const port = 8000
 
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
