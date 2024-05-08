@@ -11,14 +11,14 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.post('/mongodb/getData', (req, res) => {
-  const {col,db,ds,key,url} = req.body
+  const {col,db,ds,key,url,option} = req.body
   getData({
     col:col,
     db:db,
     ds:ds,
     key:key,
     url:url,
-  }).then((response) => {
+  },option).then((response) => {
     res.send(response)
   })
 })
