@@ -8,7 +8,7 @@ const port = 8000
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+app.use(bodyParser.json({limit: '50mb'}))
 
 app.post('/mongodb/getData', (req, res) => {
   const {col,db,ds,key,url,option} = req.body
